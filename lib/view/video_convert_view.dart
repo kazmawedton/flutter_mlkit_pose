@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mlkit_video/model/mlkit_video_converter.dart';
 import 'package:flutter_mlkit_video/utility/utilities.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:image_picker/image_picker.dart';
 
 class VideoConvertView extends StatefulWidget {
@@ -54,7 +55,7 @@ class _VideoConvertViewState extends State<VideoConvertView> {
       final exportFilePath = await mlkitVideoConverter.createVideoFromFrames();
       // カメラロールに保存
       if (exportFilePath != null) {
-        await saveToCameraRoll(exportFilePath);
+        await ImageGallerySaver.saveFile(exportFilePath);
       }
       // キャッシュクリア
       await removeFFmpegFiles();

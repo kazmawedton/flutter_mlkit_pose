@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter_video_info/flutter_video_info.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 // アプリからファイルを保存するディレクトリのパス
 Future<String> getLocalPath() async {
@@ -41,12 +40,6 @@ Future<void> removeFFmpegFiles() async {
       entry.deleteSync();
     }
   }
-}
-
-// ファイルをカメラロールに保存する
-Future<void> saveToCameraRoll(String filePath) async {
-  Permission.storage.request();
-  await ImageGallerySaver.saveFile(filePath);
 }
 
 // アプリを通じて使うの固定の値
