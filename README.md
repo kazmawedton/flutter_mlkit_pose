@@ -1,6 +1,6 @@
 # flutter_mlkit_video
 
-FlutterでGoogle ML Kitを利用したあぷりのサンプルです。
+FlutterでGoogle ML Kitを利用したアプリのサンプルです。
 
 ## 概要
 
